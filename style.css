@@ -1,0 +1,80 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #f0bdff);
+}
+
+.instructions {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background: black;
+    border: 1px solid #FFF;
+    color: #FFF;
+    max-width: 500px;
+    padding: 10px;
+}
+
+.instructions li {
+    padding: 8px;
+}
+
+.calc-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+}
+
+.calc-grid > button {
+    cursor: pointer;
+    font-size: 1.8rem;
+    border: 1px solid #000;
+    outline: none;
+    background: linear-gradient(to bottom, #DA22FF 0%, #9733EE 40%, #DA22FF 100%);
+    opacity: .75;
+}
+
+.calc-grid > button:hover {
+    border: 2px solid #000;
+    font-size: 2rem;
+    opacity: 1;
+}
+
+.span-four {
+    grid-column: span 4;
+}
+
+.calc-grid > button:last-child {
+    font-size: 4rem;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: #000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .prev-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: #FFF;
+    font-size: 2.5rem;
+}
